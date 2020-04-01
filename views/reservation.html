@@ -83,6 +83,35 @@
       </footer>
     </div>
 
-    <script src="" async defer></script>
+    <script type="text/javascript">
+    
+      $(".submit").on("click", function(event) {
+  
+        event.preventDefault();
+  
+        var reservationInput = {
+  
+          name: $("nameForReservation").val(),
+          phone: $("phoneNumForReservation").val(),
+          email: $("emailForReservation").val(),
+          id: $("idForReservation").val(),
+        };
+  
+  
+        $.post("/api/reservations", reservationInput,
+        function(reservations) {
+  
+          if(reservations) {
+            alert("Success!");
+          }
+          else {
+            alert("Nope");
+          }
+  
+        });
+  
+  
+      });
+    </script>
   </body>
 </html>

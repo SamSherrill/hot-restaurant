@@ -31,6 +31,11 @@ Note: We know this is a hard activity. We know you aren't yet comfortable with N
 ## Phase I - For this first phase, aim to write out the pieces that will need to be programmed to create the functionality of your application. Try to break it into 6-7 pieces
 
 * Create repo & share with group
+DONE
+
+* npm init
+
+* server.js
 
 * Create the front-end (visuals) for home page, reservation form, and reservation views.
 
@@ -51,7 +56,7 @@ Note: We know this is a hard activity. We know you aren't yet comfortable with N
 
 * Backend Team:
 
-Create a basic Express server.
+Create a basic Express server. npm install express, require express in the server.js
 
 Your server at this point should do the BARE MINIMUM. (Effectively, it should just say: "Listening at PORT 3000" when the command node server.js is run.)
 

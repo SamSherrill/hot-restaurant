@@ -9,13 +9,41 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+        />
+        <script
+        src="https://kit.fontawesome.com/38a3826985.js"
+        crossorigin="anonymous"
+        ></script>
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <script src="" async defer></script>
+        <div class = "container">
+            <div class="col-12">
+                <div class="jumbotron text-center";">
+                <h1 class="display-6 text-center" style="padding: 10px">
+                  <i class="fas fa-fire"></i> Hot Restaurant
+                </h1>
+                <div style="border-top: 2px solid darkgray; padding: 20px;">
+                  <h2 class="display-6 text-center">
+                    We only have 5 tables! Book your seat before they all are gone!
+                  </h2>
+                </div>
+                <div class="row">
+                  <div class="col-12 text-center">
+                    <a href="/new"><button type="button" class="btn btn-primary">
+                        View Tables
+                      </button></a>
+                    <a href="/reservation"><button type="button" class="btn btn-danger">
+                      Make Reservation
+                    </button></a>
+                  </div>
+                </div>
+              </div>
+        </div>
     </body>
 </html>

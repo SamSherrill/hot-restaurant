@@ -89,6 +89,12 @@
 
       event.preventDefault();
 
+      // Bonus: What if someone enters a customerID that is already in use?
+      // Need an if / else to look at the API, and compare the user's selected
+      // customerID to all other previous customerIDs. If it's already in use by
+      // another customer, then tell the user to enter a different ID. Else,
+      // run the following code.
+
       var reservationInput = {
 
         name: $("#nameForReservation").val(),
@@ -98,14 +104,14 @@
       };
 
 
-      $.post("/api/reservations", reservationInput,
-      function(reservations) {
+      $.post("/api/reservation", reservationInput)
+      .then(function(tables) {
 
-        if(reservations) {
-          alert("Success!");
+        if(tables) {
+          alert("You're reservation has been added!");
         }
         else {
-          alert("Nope");
+          alert("Sorry, you are on the waitlist!");
         }
 
       });
@@ -113,7 +119,7 @@
 
     });
     
-    
+  
     
     
     </script>

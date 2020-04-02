@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js">
-  <!--<![endif]-->
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -53,7 +48,7 @@
           <div class="card-header">
             <h4 class="display-6">Current Reservations</h4>
           </div>
-          <div class="card-body"></div>
+          <div class="card-body" id = "currentReservations"></div>
         </div>
       </div>
     </div>
@@ -63,9 +58,71 @@
           <div class="card-header">
             <h4 class="display-6">Waiting List</h4>
           </div>
-          <div class="card-body"></div>
+          <div class="card-body" id = "waitlistReservations"></div>
         </div>
       </div>
     </div>
+    <script>
+      $.get("/api/reservation",(data)=>{
+        console.log(data);
+        if(data){
+          for(var i = 0; i < data.length; i++){
+
+
+            var currentReservations = $("<div>");
+              currentReservations.addClass("section");
+              currentReservations.attr("id", "section" + i +1);
+              $("#currentReservations").append(currentReservations);
+
+                var addTableNum = i + 1;
+                $("section" +i + 1).append("<h1><span class='label'>" + addTableNum +"</span>" + data[i].customerName + "</h1>");
+
+                }
+              
+            }
+          })
+  
+            
+            // {
+            //   customerName: "Emerald",
+            //   phoneNumber: "333-333-3333",
+            //   customerEmail: "bob@test.com",
+            //   customerID: "Emerald"
+            // },
+            // I think this may be  why we were getting undefined ^^^
+            // Does this match up to the collection returned by our API? 
+            // var currentRes = `Name: ${data[i].customerName} \n` + 
+            //   `Email: ${data[i].customerEmail} \n` +
+            //   `ID: ${data[i].customerID}\n` +
+            //   `Phone Number: ${data[i].phoneNumber}\n`
+
+            //   document.getElementById("currentReservations").append(currentRes);
+              //I think the var curentRes needs to be a jquery object
+              // I think it appends the text, so if we remove the div tags and add in \n, it may work
+              //THink that'll work too
+              // also going to add in more back ticks and + signs because I think it'll add in
+              // all the extra spaces from pressing enter
+              //still no enter space for some reason
+              // i will lose my mind :)
+              //already lost mine
+              // var currentRes = i +1;
+      //      }
+      //   }
+      // })
+
+      // $.get("/api/waitlist",(data)=>{
+      //   if(data){
+          
+      //   }
+      // })
+      
+      // <div class="card" style="width: 18rem;">
+      //   <div class="card-body">
+      //     <h5 class="card-title">Card title</h5>
+      //     <p class="card-text">Name</p>
+      //     <p class="card-text">Number</p>
+      //   </div>
+      // </div>
+    </script>
   </body>
 </html>
